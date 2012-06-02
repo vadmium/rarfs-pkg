@@ -8,13 +8,16 @@ arch=('i686' 'x86_64')
 url="http://rarfs.sourceforge.net/"
 license=('GPL')
 depends=(fuse gcc-libs)
-source=("$_fullver.tar.gz::http://sourceforge.net/projects/$pkgname/files/$pkgname/$pkgver/$_fullver.tar.gz/download")
-md5sums=(b708df36a7ac276a5189083ba003d37c)
+
+# Standard Source Forge integration:
+source+=("http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
+sha1sums+=(ca9bbe7ca65bd05915a7d4e4f58d00e759b888b9)
+md5sums+=(b708df36a7ac276a5189083ba003d37c)
 
 build() {
   cd "$srcdir/$_fullver"
   ./configure --prefix=/usr
-  make || return 1
+  make
 }
 
 package() {
