@@ -1,6 +1,6 @@
 # Contributor: Jacques de Laval <jac.dl@gawab.com>
 pkgname=rarfs
-pkgver=0.0.10
+pkgver=0.1.0
 _fullver="$pkgname-$pkgver"
 pkgrel=1
 pkgdesc="A Fuse module for mounting uncompressed Rar archives"
@@ -11,8 +11,8 @@ depends=(fuse gcc-libs)
 
 # Standard Source Forge integration:
 source+=("http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz")
-sha1sums+=(ca9bbe7ca65bd05915a7d4e4f58d00e759b888b9)
-md5sums+=(b708df36a7ac276a5189083ba003d37c)
+sha1sums+=(1e5d350d55c34f63b4b9170f4fc4ca3b1fe19a6f)
+md5sums+=(35c602f180322ee6c543c4fdf32c8e84)
 
 build() {
   cd "$srcdir/$_fullver"
